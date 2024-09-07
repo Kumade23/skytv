@@ -73,6 +73,8 @@
     <form id="videoForm" onsubmit="playVideo(event);">
         <label for="channel">Select Channel:</label>
         <select id="channel" name="channel">
+            <option value="skyuno">Sky Uno</option>
+            <option value="skyatlantic">Sky Atlantic</option>
             <option value="eurosport1">Eurosport 1</option>
             <option value="eurosport2">Eurosport 2</option>
             <option value="sport24">Sport 24</option>
@@ -103,6 +105,16 @@
     jwplayer.key = 'XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';
 
     const channels = {
+        skyuno: {
+            link: 'https://linear313-it-dash1-prd-akp2.cdn13.skycdp.com/016a/32477/FHD/skyuno/master_stereo.mpd',
+            clearKeyKid: '003610b8556000936e48061cdb4ee11a',
+            clearKey: '2cd6bcc2160aa6ec048e5a5f7a0f73c8'
+        },
+        skyatlantic: {
+            link: 'https://linear315-it-dash1-prd-akp2.cdn13.skycdp.com/016a/31226/FHD/skyatlantic/master_stereo.mpd',
+            clearKeyKid: '003610b8556000936e48061cdb4ee11a',
+            clearKey: '2cd6bcc2160aa6ec048e5a5f7a0f73c8'
+        },
         eurosport1: {
             link: 'https://linear311-it-dash1-prd.selector.skycdn.it/016a/313073/FHD/eurosport/master_stereo.mpd',
             clearKeyKid: '0036bb3fa7e6f2c334d7cba5c28b6caf',
@@ -115,8 +127,8 @@
         },
         sport24: {
             link: 'https://linear303-it-dash1-prd.selector.skycdn.it/016a/31035/FHD/skysport24/master_stereo.mpd',
-            clearKeyKid: '003618ccd7be22b6367207ed8d64d505',
-            clearKey: '36e97f29ec5ea6126077cc040cc2ceeb'
+            clearKeyKid: '003663ddf1acb25ea88a7cf973afc0d5',
+            clearKey: '35ea91b4151d6975007998c328daee6c'
         },
         skysportuno: {
             link: 'https://linear301-it-dash1-prd.selector.skycdn.it/016a/31023/FHD/skysportuno/master_stereo.mpd',
@@ -160,48 +172,48 @@
         },
         skysport251: {
             link: 'https://linear311-it-dash1-prd.selector.skycdn.it/016a/31917/FHD/skysport251/master.mpd',
-            clearKeyKid: '6ghwpOblfAk8jVgrUwcpqA',
-            clearKey: '2SUIVf+kZ5GRfzrKu6bhiw'
+            clearKeyKid: '0036422cf4293ae7cf1e7f7062cc29e8',
+            clearKey: '37a223fcc17c087043bc837432fd25d8'
         },
         skysport252: {
             link: 'https://linear312-it-dash1-prd.selector.skycdn.it/016a/31918/FHD/skysport252/master.mpd',
-            clearKeyKid: '7JuZnb8uMwOS2opEMk2aPg',
-            clearKey: 'MJnEuEpJLDT/oiGcG2Gnww'
+            clearKeyKid: '003643bc9d61268c987504fa93b397f6',
+            clearKey: 'b8d5767c73ff8bba68d955035b56f4c1'
         },
         skysport253: {
             link: 'https://linear313-it-dash1-prd.selector.skycdn.it/016a/31919/FHD/skysport253/master.mpd',
-            clearKeyKid: 'APDa8hZxZA2BmNsIph+GfA',
-            clearKey: 'fPSBD9U+7IUnPvoF8mczYw'
+            clearKeyKid: '0036077996d02761a9d4c29ddfac7466',
+            clearKey: 'e83d078779ae5b53e2eb999513d55682'
         },
         skysport254: {
             link: 'https://linear314-it-dash1-prd.selector.skycdn.it/016a/31920/FHD/skysport254/master.mpd',
-            clearKeyKid: 'NmT8WV8aiUuWbMfaerUBcw',
-            clearKey: 'Scy9RhdtP4Ne6yNCi+z3AA'
+            clearKeyKid: '00369c14c20b78aadb1ec0e3c0e74979',
+            clearKey: 'e768767e2c7238d8069887bb36aed7fa'
         },
         skysport255: {
             link: 'https://linear315-it-dash1-prd.selector.skycdn.it/016a/31921/FHD/skysport255/master.mpd',
-            clearKeyKid: 'rbWADQAkTBGtSFSXW1upLA',
-            clearKey: 'mn/5DWnq/LG8+wnFojc2fA'
+            clearKeyKid: '0036b781a22ebb0c20c16ac27d5d1448',
+            clearKey: 'f309b94acfda720bf1ed5741489f8967'
         },
         skysport256: {
             link: 'https://linear316-it-dash1-prd.selector.skycdn.it/016a/31922/FHD/skysport256/master.mpd',
-            clearKeyKid: '0036fd2f06568f9ab18c0c8e0e839d9c',
-            clearKey: '32dd91a158e270dd4d8ac83e1bb1a7c8'
+            clearKeyKid: '00366f263859fc1cc82d2c4da6a66ef6',
+            clearKey: '754ae922d113c54349002cd9a88694a4'
         },
         skysport257: {
             link: 'https://linear317-it-dash1-prd.selector.skycdn.it/016a/31923/FHD/skysport257/master.mpd',
-            clearKeyKid: '0036f5f36494e48d80ea35f1b4387b08',
-            clearKey: '8b9532552bfa90d346c4c62e8b378b97'
+            clearKeyKid: '0036faeace9872d3ceeb8b1b63f0baa3',
+            clearKey: 'dbd41ee944243307d39b7b27f16615a8'
         },
         skysport258: {
             link: 'https://linear318-it-dash1-prd.selector.skycdn.it/016a/31924/FHD/skysport258/master.mpd',
-            clearKeyKid: '00365b853b4b17d3b2a3a0e9df05fd7f',
-            clearKey: '7d485d6ea7d8b68b4486f4d62e210f84'
+            clearKeyKid: '0036fd8ccfddba47c8b40aeff63a797c',
+            clearKey: 'dfd5c9d0f4ac6f3a1bd89803399e7026'
         },
         skysport259: {
             link: 'https://linear319-it-dash1-prd.selector.skycdn.it/016a/31925/FHD/skysport259/master.mpd',
-            clearKeyKid: '0036e22c17caa11678447010634272a2',
-            clearKey: '57dff2b5c40cc135a0df13854e110d64'
+            clearKeyKid: '0036644f7699f43e401f88d920dc385c',
+            clearKey: 'e5b0cebdc3edd7996d283041535fce9c'
         }
     };
 
