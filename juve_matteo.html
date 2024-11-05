@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRM Live Video Player - Kumade23</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #1a1a1a;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #fff;
+        }
+        #player {
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>DRM Live Video Player - Kumade23</h1>
+
+    <div id="player"></div>
+</div>
+
+<script src="jwplayer.js"></script>
+<script>
+    jwplayer.key = 'XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';
+
+    window.onload = function() {
+        // Imposta il link MPD, Key ID e Key direttamente
+        var defaultLink = "https://linear311-it-dash1-prd.selector.skycdn.it/016a/32233/FHD/skysport253/master_stereo.mpd";
+        var defaultClearKeyKid = "0036077996d02761a9d4c29ddfac7466";
+        var defaultClearKey = "e83d078779ae5b53e2eb999513d55682";
+        
+        var playerInstance = jwplayer("player");
+        var source = {
+            "file": defaultLink,
+            "default": true,
+            "type": "dash",  // Questo è un link MPD, quindi impostiamo il tipo su DASH
+            "drm": {
+                "clearkey": {
+                    "keyId": defaultClearKeyKid,
+                    "key": defaultClearKey
+                }
+            }
+        };
+
+        playerInstance.setup({
+            playlist: [{
+                "sources": [source]
+            }],
+            width: "100%",
+            aspectratio: "16:9",
+            autostart: true,
+            cast: {
+                appid: 'CC1AD845'
+            }
+        });
+    };
+</script>
+</body>
+</html>
